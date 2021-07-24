@@ -9,10 +9,8 @@ public class BasicDemo {
         public Integer call() throws Exception {
             var sleepSeconds1 = new Random().nextInt(1000);
             Thread.sleep(sleepSeconds1);
-            return sleepSeconds1;
-        }
+            return sleepSeconds1;}
     }
-
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<Integer> future = executor.submit(new Task());
@@ -20,9 +18,7 @@ public class BasicDemo {
         Thread.sleep(100);
         try {
             System.out.println(future.get());
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        } catch (ExecutionException e) {e.printStackTrace();}
         executor.shutdown();
     }
 }
